@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="stylesheet" href="styles.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/268557f88f.js" crossorigin="anonymous"></script>
+
+
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+
+        <title>Registration - ERMUN</title>
+        <link rel="icon" type="image/png" href="Images\Logo.png"  >
+        
+
+
+
+
+</head>
+<body>
+        <div class="navbar">
+
+                <span class="navbar-left">
+                        <a href="index.html" class="">
+                        <img style="width: 50px; height: 50px; vertical-align: middle;" src = "Images\Logo.png" alt="">
+                        <span class = "navbar-title"style="vertical-align: middle;">Ermitage MUN</span>           
+                        </a>
+                </span>
+
+                <span class="navbar-right">
+                        <!-- Widescreen Navbar -->
+                        <div class="widescreen-navbar">
+                        <span style="vertical-align: middle; padding: 0 0.6vw;"><a href="index.html" class="navbar-link">Home</a></span>
+                        <div class="dropdown"><span style="vertical-align: middle; padding-left:0.6vw;">Conference</span>
+                        <i class="fa-solid fa-caret-down" style="vertical-align:middle; padding-right: 0.6vw;"></i>
+                                <div class="dropdown-content"><a href="Committees.html" class="dropdown-content-item navbar-link">Committees</a><a href="Schedule.html" class="dropdown-content-item navbar-link">Schedule</a></div>
+                        </div>
+                        <span style="vertical-align: middle; padding: 0 0.6vw;"><a href="Registration.html" class="navbar-link">Registration</a></span>
+                        <span style="vertical-align: middle; padding: 0 0.6vw;"><a href="Photos.html" class="navbar-link">Photos</a></span>
+                        </div>
+
+                        <!-- Mobile Navbar -->
+                        <div class="mobile-navbar">
+                        <i id="dropdown-toggle" style="vertical-align: middle; padding: 0 0.6vw;" class="fa-solid fa-bars burger-icon"></i>
+                        </div>
+                </span>
+        
+
+
+        </div>
+                <div id = "dropdown" class="burger-dropdown">
+                        <div class="burger-item"><a href="index.html" style="padding-left: 5vw;">Home</a></div>
+                        <div id="subdropdown-toggle" class="burger-item navbar-dropdown"><p style="cursor: pointer; padding-left: 5vw; display: var(--fa-display, inline-block); margin:0;" class="">Conference</p><i class="fa-solid fa-caret-down" style="cursor:pointer; padding-left: 10px;"></i></div>
+                                <div id="subdropdown"class="burger-subdropdown">
+                                <div class="burger-subitem"><a style="padding-left: 10vw;" href="Committees.html" class="">Committees</a></div>
+                                <div class="burger-subitem"><a style="padding-left: 10vw;" href="Schedule.html" class="">Schedule</a></div>
+                                </div>
+                        <div class="burger-item"><a style="padding-left: 5vw;" href="Registration.html" class="">Registration</a></div>
+                        <div class="burger-item"><a style="padding-left: 5vw;" href="Photos.html" class="">Photos</a></div>
+                </div>
+        
+        
+
+<main>
+
+<div style="height: calc(100vh - 70px);">
+
+<p class="title1" style="margin-bottom:9vh;">Registration</p>
+
+
+
+
+<div style="text-align: center; margin-bottom: 11vh;">
+<button class="button1" style="margin-right: 10px;">Registration Link</button>
+
+<button class="button1">Payment Link</button>
+</div>
+
+
+<p class="title2" style="font-size: 2rem; text-align: center; margin: 50px 20px;">Refunds are unavailable for this event.<br> Delegate payment is 17€ online or 20€ in person.</p>
+</div>
+
+
+        <div class="">
+                <p class="title2">Available Countries</p>
+                <iframe id="docFrame"class="committee-embed"src="https://docs.google.com/spreadsheets/d/e/2PACX-1vScrUGdOwl1-Oeac78swEQm4PxQoxoyiTB6Hpj632BQJ9Yrt0ZcEjny1-k5ZjreCv5cmuUP2CtzxWls/pubhtml?gid=0&single=false&widget=true&headers=false"></iframe>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <footer class="footer flex-box">
+                <div style="margin:auto">
+                <a href="https://www.instagram.com/ermitagemun/"><i class="footer-icon fab fa-instagram"></i></a>
+                <i onclick="copyLink()" style="cursor: pointer;"class="footer-icon far fa-envelope"></i>
+                <span id="copiedText" class="copied">E-mail copied to clipboard</span>
+                <p class="credit">Website by Jan Tarcz</p>
+                </div>
+                
+        </footer>
+
+
+
+
+        <script src="code.js"></script>
+</body>
+</html>
