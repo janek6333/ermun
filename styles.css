@@ -842,7 +842,7 @@ button{
 }
 
 .bg2{
-    background-image: url("Images/Home-Background-2.png");
+    background-image: "Images/Home-Background-2.png";
     background-position: center;
     background-size: auto auto;
 }
@@ -1272,3 +1272,4 @@ button{
     margin: 20px 25px;
     color: #414141;
 }
+
