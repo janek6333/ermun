@@ -95,7 +95,6 @@
 
 
 
-        <p class="title2">Committees</p>
 
         <div class="committee-grid">
                 <!-- 1 -->
@@ -105,12 +104,12 @@
                         <p class="committee-title">Security Council</p>
                         <p class="committee-title" style="height: 48px;">UNSC</p>
 
-                        <p class="committee-subtext" style="height: 76px;">Addressing disputes in the South China Sea: de-escalating tensions and reaffirming freedom of navigation.</p>
+                        <p class="committee-subtext" style="height: 76px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, possimus. Perspiciatis hic dolor ratione!</p>
                         <p class="committee-subtext" style="text-align: center; color:#000000; margin:20px;">Expert Difficulty</p>
 
                         <a href="" class=""><button class="button2">Research Report</button></a>
-                        <!-- <a href="" class=""><button class="button2">Resolution</button></a>  -->
-                        <!-- CHANGE -->
+                        <button class="button2" id="UNSC">Resolution</button>
+
                 </div>
 
                 <!-- 2 -->
@@ -120,12 +119,12 @@
                         <p class="committee-title">Disarmament and International Security Committee</p>
                         <p class="committee-title">DISEC</p>
 
-                        <p class="committee-subtext" style="height: 76px;">The Question of the Naval Arms Race in Emerging Hotspots</p>
+                        <p class="committee-subtext" style="height: 76px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis, neque sapiente! Necessitatibus aut earum vero?</p>
                         <p class="committee-subtext" style="text-align: center; color:#000000; margin:20px;">Expert Difficulty</p>
 
                         <a href="" class=""><button class="button2">Research Report</button></a>
-                        <!-- <a href="" class=""><button class="button2">Resolution</button></a> -->
-                        <!-- CHANGE -->
+                        <a href="" class=""><button class="button2">Resolution</button></a>
+
                 </div>
 
                 <!-- 3 -->
@@ -139,8 +138,8 @@
                         <p class="committee-subtext" style="text-align: center; color:#000000; margin:20px;">Intermediate Difficulty</p>
 
                         <a href="" class=""><button class="button2">Research Report</button></a>
-                        <!-- <a href="" class=""><button class="button2">Resolution</button></a> -->
-                        <!-- CHANGE -->
+                        <a href="" class=""><button class="button2">Resolution</button></a>
+
                 </div>
 
                 <!-- 4 -->
@@ -154,8 +153,7 @@
                         <p class="committee-subtext" style="text-align: center; color:#000000; margin:20px;">Intermediate Difficulty</p>
 
                         <a href="" class=""><button class="button2">Research Report</button></a>
-                        <!-- <a href="" class=""><button class="button2">Resolution</button></a> -->
-                        <!-- CHANGE -->
+                        <a href="" class=""><button class="button2">Resolution</button></a>
 
                 </div>
 
@@ -170,8 +168,7 @@
                         <p class="committee-subtext" style="text-align: center; color:#000000; margin:20px;">Intermediate Difficulty</p>
 
                         <a href="" class=""><button class="button2">Research Report</button></a>
-                        <!-- <a href="" class=""><button class="button2">Resolution</button></a> -->
-                        <!-- CHANGE -->
+                        <a href="" class=""><button class="button2">Resolution</button></a>
 
                 </div>
 
@@ -186,13 +183,68 @@
                         <p class="committee-subtext" style="text-align: center; color:#000000; margin:20px;">Beginner Difficulty</p>
 
                         <a href="" class=""><button class="button2">Research Report</button></a>
-                        <!-- <a href="" class=""><button class="button2">Resolution</button></a> -->
-                        <!-- CHANGE -->
+                        <a href="" class=""><button class="button2">Resolution</button></a>
 
                 </div>
 
 
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="password-background" id="UNSC-password-parent">
+        <div class="password-container">
+                <p class="password-title">
+                        Password for UNSC Resolution
+                </p>
+                <input type="text" class="password-input" id="input">
+                <p class="password-subtext" id="subtext">
+                        This measure is introduced to keep the ErMUN debates orderly. 
+                </p>
+                <button class="password-button1" id="cancel">Cancel</button>
+                <button class="password-button2" onclick="goToUNSC()">Enter</button>
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -247,5 +299,45 @@
 
 
         <script src="code.js"></script>
+        <script>
+                
+                const unscButton = document.getElementById('UNSC');
+                const unscPasswordDisplay = document.getElementById('UNSC-password-parent');
+                const CancelButton = document.getElementById('cancel')
+                const PasswordInput = document.getElementById('input')
+                const EnterButton = document.getElementById('enter')
+                const PasswordSubtext = document.getElementById('subtext')
+
+
+                unscButton.addEventListener('click', () => {
+                unscPasswordDisplay.classList.toggle('active');
+                });
+                
+                CancelButton.addEventListener('click', () => {
+                unscPasswordDisplay.classList.remove('active');
+                PasswordInput.classList.remove('failed')
+                PasswordSubtext.textContent = "This measure is introduced to keep the ErMUN debates orderly."
+                });
+
+                function goToUNSC() {
+                        
+                        if (PasswordInput.value == "SecurityCouncil"){
+                                window.location.href = "Committee-Resolutions/SecurityCouncil Copy.html";
+                        } else {
+                                PasswordInput.classList.remove('failed');
+                                void PasswordInput.offsetWidth;
+                                PasswordInput.classList.toggle('failed');
+                                PasswordSubtext.textContent = "Incorrect Password";
+                                PasswordInput.value = "";
+                                PasswordInput.animate(shake);
+                                
+                                
+                        }
+                }
+
+
+
+
+        </script>
 </body>
 </html>
