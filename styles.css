@@ -513,7 +513,7 @@ button{
 }
 
 .copied {
-    margin-left: 10px;
+    text-align: center;
     color: rgb(255, 255, 255);
     font-size: 2rem;
     display: none;
@@ -1531,3 +1531,4 @@ button{
     margin: 0px 10px;
 
 }
+
