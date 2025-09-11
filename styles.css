@@ -156,7 +156,8 @@ a{
 html, body{
     background-color: #ffe7d3;
     margin:0px;
-    font-family: "Libre Franklin", sans-serif;
+/*     font-family: "Libre Franklin", sans-serif; */
+    font-family: sans-serif;
     height: 100%;
     margin: 0;
 }
@@ -168,7 +169,9 @@ main{
 
 
 button{
-    font-family: "Libre Franklin", sans-serif;
+
+/*     font-family: "Libre Franklin", sans-serif; */
+    font-family: sans-serif;
 }
 
 
@@ -1526,4 +1529,5 @@ button{
     transition: all 1s;
     color: #ffffff;
     margin: 0px 10px;
+
 }
