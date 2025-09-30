@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /committee htmls/
+Allow: /
+Sitemap: https://ermun.fr/sitemap.xml
