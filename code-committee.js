@@ -33,7 +33,7 @@
                 const sheetName = "Committee Matrix"
 
 
-                import dotenv from "dotenv";
+                const dotenv = require("dotenv");
                 dotenv.config();
                 
                 const apiKey = process.env.API_KEY;
