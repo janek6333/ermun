@@ -24,35 +24,119 @@
 
 
 
+
+
+
+                funcList = []
+
+
                 
-                let sheetData = [];
                 let count = 0;
+                let unscList = []
+                let disecList = []
+                let imoList = []
+                let hscList = []
+                let unctadList = []
+                let unepList = []
 
-                const sheetId = '1IVsDsySA8-v7qQCtZsOaC4t42hV5rW4Cg6QidO63dfA';
-                let range = 0
-                const sheetName = "Committee Matrix"
 
 
-                const dotenv = require("dotenv");
-                dotenv.config();
-                
-                const apiKey = process.env.API_KEY;
-                
-                if (!apiKey) {
-                  console.error("No API key found!");
+
+                const sheetId = "1IVsDsySA8-v7qQCtZsOaC4t42hV5rW4Cg6QidO63dfA";
+                const gid = "0"; 
+
+                const url = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv&id=${sheetId}&gid=${gid}`;
+
+
+
+        async function getCSV() {
+        const response = await fetch(url);
+        const text = await response.text();
+
+        const cleanText = text.replace(/\r/g, "");
+
+        const sheetData = cleanText.split("\n").map(row => row.split(","));
+        console.log(sheetData);
+
+                // Unnecessary long ahh code lmao
+        for (let i = 0; i < 27; i++) {
+                        if (sheetData[i+3][1] != ""){
+                                unscList.push([])
+                                unscList[i].push((sheetData[i+3][1]))
+                                unscList[i].push((sheetData[i+3][2]))
+                                unscList[i].push((sheetData[i+3][3]))
+                        }
+        }
+
+        for (let i = 0; i < 27; i++) {
+                        if (sheetData[i+3][5] != ""){
+                                disecList.push([])
+                                disecList[i].push((sheetData[i+3][5]))
+                                disecList[i].push((sheetData[i+3][6]))
+                                disecList[i].push((sheetData[i+3][7]))
+                        }
+        }
+
+
+        for (let i = 0; i < 27; i++) {
+                        if (sheetData[i+3][9] != ""){
+                                imoList.push([])
+                                imoList[i].push((sheetData[i+3][9]))
+                                imoList[i].push((sheetData[i+3][10]))
+                                imoList[i].push((sheetData[i+3][11]))
+                        }
+        }
+
+        for (let i = 0; i < 27; i++) {
+                        if (sheetData[i+34][1] != ""){
+                                hscList.push([])
+                                hscList[i].push((sheetData[i+34][1]))
+                                hscList[i].push((sheetData[i+34][2]))
+                                hscList[i].push((sheetData[i+34][3]))
+                        }
+        }
+
+        for (let i = 0; i < 27; i++) {
+                        if (sheetData[i+34][5] != ""){
+                                unctadList.push([])
+                                unctadList[i].push((sheetData[i+34][5]))
+                                unctadList[i].push((sheetData[i+34][6]))
+                                unctadList[i].push((sheetData[i+34][7]))
+                        }
+        }
+
+        for (let i = 0; i < 27; i++) {
+                        if (sheetData[i+34][9] != ""){
+                                unepList.push([])
+                                unepList[i].push((sheetData[i+34][9]))
+                                unepList[i].push((sheetData[i+34][10]))
+                                unepList[i].push((sheetData[i+34][11]))
+                        }
+        }
+
+        console.log(unscList)
+        console.log(disecList)
+        console.log(imoList)
+        console.log(hscList)
+        console.log(unctadList)
+        console.log(unepList)
+        console.log(unepList[5][2])
+        
+
                 }
 
+                
+                getCSV();
 
-                let url = 0
 
 
 
 
 
                 const flagMap = {
-                        "USA":"us",
+                        "United States":"us",
                         "France":"fr",
-                        "UK":"gb",
+                        "United Kingdom":"gb",
                         "Russia":"ru",
                         "China":"cn",
                         "India":"in",
@@ -113,6 +197,21 @@
                         "Argentina":"ar",
                         "Ireland":"ie",
                         "Turkey":"tr",
+                        "Chile":"cl",
+                        "Nigeria":"ng",
+                        "Togo":"tg",
+                        "Benin":"bj",
+                        "Cameroon":"cm",
+                        "Equatorial Guinea":"gq",
+                        "DR. Congo":"cd",
+                        "Angola":"ao",
+                        "Senegal":"sn",
+                        "Gabon":"ga",
+                        "USSR":"ru",
+                        "Peru":"pe",
+                        "Libya":"ly",
+                        
+
                 }
 
 
@@ -137,7 +236,6 @@
 
                 function addHtml(n){
 
-                        console.log("2) " + count )
                         
                         const availableLog = document.createElement("div")
                         const countryIcon = document.createElement("span")
@@ -146,18 +244,18 @@
                         availableLog.classList.add("available-log")
 
                         countryIcon.classList.add("fi")
-                        countryIcon.classList.add("fi-"+flagMap[sheetData[n][0]])
+                        countryIcon.classList.add("fi-"+flagMap[funcList[n][0]])
                         countryIcon.classList.add("available-flag")
                         
 
                         countryTitle.classList.add("available-country")
-                        countryTitle.textContent = sheetData[n][0]
+                        countryTitle.textContent = funcList[n][0]
 
 
                         availableLog.appendChild(countryIcon)
                         availableLog.appendChild(countryTitle)
 
-                        if (sheetData[n].length == 1){
+                        if (funcList[n][1] == ""){
                                 const availableText = document.createElement("p")
 
                                 availableText.classList.add("available")
@@ -166,10 +264,10 @@
 
                                 availableLog.appendChild(availableText)
                                 
-                        } else if(sheetData[n].length == 3) {
+                        } else {
 
                                 count ++
-                                console.log("3) " + count )
+                                
                                 const subcontainer = document.createElement("div")
                                 const nameText = document.createElement("p")
                                 const schoolText = document.createElement("p")
@@ -178,8 +276,8 @@
                                 nameText.classList.add("available-name")
                                 schoolText.classList.add("available-school")
 
-                                nameText.textContent = sheetData[n][1]
-                                schoolText.textContent = sheetData[n][2]
+                                nameText.textContent = funcList[n][1]
+                                schoolText.textContent = funcList[n][2]
 
                                 subcontainer.appendChild(nameText)
                                 subcontainer.appendChild(schoolText)
@@ -208,37 +306,29 @@
                         
                         
                         if(x==="UNSC"){
-                                range = 'B4:D30';
+                                funcList = unscList;
                         }else if(x==="UNDISEC"){
-                                range = 'F4:H30';
+                                funcList = disecList;
                         }else if(x==="UNIMO"){
-                                range = 'J4:L30';
+                                funcList = imoList;
                         }else if(x==="UNHSC"){
-                                range = 'B35:D61';
+                                funcList = hscList;
                         }else if(x==="UNCTAD"){
-                                range = 'F35:H61';
+                                funcList = unctadList;
                         }else if(x==="UNEP"){
-                                range = 'J35:L61';
+                                funcList = unepList;
                         }
 
-                        url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
-
-
-                        fetch(url)
-                        .then(res => res.json())
-                        .then(data => {
-                        sheetData = data.values;
                         
 
-                        for (let i = 0; i < sheetData.length; i++) {
+                        for (let i = 0; i < funcList.length; i++) {
                                 addHtml(i)
                         }
 
 
-                        countryCount.textContent = count+"/"+sheetData.length
+                        countryCount.textContent = count+"/"+funcList.length
 
 
-                })
 
                         .catch(err => console.error("Error fetching data:", err));
                 }
@@ -322,7 +412,6 @@
                         AvailableTitle.textContent = x
 
                         count = 0
-                        console.log("1) " + count )
                         fetchSheetData(x)
                         if (x==="UNSC"){
                                 chair.textContent = "Euan & Jan"
@@ -370,6 +459,8 @@
 
                 CountryDisplay.addEventListener('click', (e) => {
                         if (e.target === CountryDisplay){
+                                AvailableDisplay.scrollTop = 0;
                                 CountryDisplay.classList.toggle("active")
                         }
                 });
+
