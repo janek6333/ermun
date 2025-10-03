@@ -202,7 +202,7 @@
                         "Togo":"tg",
                         "Benin":"bj",
                         "Cameroon":"cm",
-                        "Equatorial Guinea":"gq",
+                        "Eq. Guinea":"gq",
                         "DR. Congo":"cd",
                         "Angola":"ao",
                         "Senegal":"sn",
