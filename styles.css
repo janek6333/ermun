@@ -1327,12 +1327,14 @@ button{
 }
 
 .bg1{
+    background-color: #2f5050;
     background-image: url("Images/Home-Background-1.png");
     background-position: center;
     background-size: auto 100%;
 }
 
 .bg2{
+    background-color: #2f5050;
     background-image: url("Images/Home-Background-2.png");
     background-position: center;
     background-size: auto auto;
@@ -1763,5 +1765,6 @@ button{
     margin: 20px 25px;
     color: #414141;
 }
+
 
 
