@@ -1185,7 +1185,7 @@ button{
         float:right;
         margin-right:10px;
         margin-top: 6px;
-        width: calc(100% - 142px);
+        width: calc(100% - 168px);
 
     }
 
@@ -1274,7 +1274,7 @@ button{
         float:right;
         margin-right:10px;
         margin-top: 3px;
-        width: calc(100% - 176px);
+        width: calc(100% - 211px);
     }
 
     .available-name{
@@ -1765,6 +1765,7 @@ button{
     margin: 20px 25px;
     color: #414141;
 }
+
 
 
 
