@@ -328,7 +328,7 @@
 
                         countryCount.textContent = count+"/"+funcList.length
 
-                        console.log("")
+                        
 
                         .catch(err => console.error("Error fetching data:", err));
                 }
