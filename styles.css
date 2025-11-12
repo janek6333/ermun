@@ -755,7 +755,6 @@ button{
     color: #ffffff;
     padding: 10px 10px;
     width:300px;
-    height:29px;
     font-size: 1.5rem;
     border-radius: 5px;
     transition: background-color 0.2s;
@@ -1773,6 +1772,7 @@ button{
     margin: 20px 25px;
     color: #414141;
 }
+
 
 
 
