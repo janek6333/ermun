@@ -654,6 +654,7 @@ button{
     /* height: calc(95vh - 10rem - 115px); */
     height: calc(95vh - 115px);
     overflow: hidden;
+    display: block;
 }
 
 .amendment-parent{
@@ -790,6 +791,11 @@ button{
     }
     .amendment-container{
         height:300px ;
+        display: none;
+    }
+
+    .desktop-only{
+        display: none;
     }
 
 }
