@@ -84,7 +84,7 @@
 
 
         <div class="amendment-container" id="amendment-container">
-
+<!-- 
 
                 <div class="amendment-div">
                         <p class="title-container">
@@ -92,15 +92,23 @@
                                 <span class="country">USA</span>
                         </p>
                         <div class="amendment-divider"></div>
+                        
+
+                        <div class="subtext-amendment-div">
+
                         <p class="amendment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam distinctio aut in eveniet, adipisci consequatur?</p>
-                </div>
+
+                        <p class="co-country">Co-submitted by: Canada</p><p class="co-country">Second degree amendment</p>
+
+                        </div>
+                </div> -->
 
 
 
 
         </div>
 
-        <button class="amendment-button desktop-only">  </button>
+        <button class="amendment-button desktop-only">ErMUN 2025</button>
 
         </div>
         
@@ -195,6 +203,7 @@
 
                         console.log("Data updated:", sheetData);
 
+                        console.log(sheetData)
                         amendmentContainer.innerHTML = "";
                         for (let i = 1; i < (sheetData.length); i++) {
 
@@ -220,7 +229,7 @@
                 function addHtml(n){
 
 
-                if (sheetData[n][5] != ''){
+                if (sheetData[n][6] != ''){
                         const amendmentDiv = document.createElement("div")
                         const titleContainer = document.createElement("p")
                         const clause = document.createElement("span")
@@ -229,6 +238,11 @@
                         const amendmentTextbox = document.createElement("p")
 
 
+
+                        const subtextAmendemntDiv = document.createElement("div")
+
+
+                        subtextAmendemntDiv.classList.add("subtext-amendment-div")
                         amendmentDiv.classList.add("amendment-div")
                         titleContainer.classList.add("title-container")
                         clause.classList.add("clause")
@@ -237,17 +251,19 @@
                         amendmentTextbox.classList.add("amendment")
 
 
-                        if (sheetData[n][3] == "Strike"){
+
+
+                        if (sheetData[n][2] == "Strike"){
                                 clause.classList.add("strike")
                                 clause.textContent = "STRIKE"
 
                         }
-                        if (sheetData[n][3] == "Add"){
+                        if (sheetData[n][2] == "Add"){
                                 clause.classList.add("add")
                                 clause.textContent = "ADD"
 
                         }
-                        if (sheetData[n][3] == "Replace"){
+                        if (sheetData[n][2] == "Replace"){
                                 clause.classList.add("replace")
                                 clause.textContent = "REPLACE"
 
@@ -255,19 +271,45 @@
 
 
 
-                        country.textContent = sheetData[n][2]
-                        amendmentTextbox.textContent = sheetData[n][4]
+
+                        
+
+                        country.textContent = sheetData[n][1]
+                        amendmentTextbox.textContent = sheetData[n][3]
+
+                        subtextAmendemntDiv.appendChild(amendmentTextbox)
+
+
+                        
+                        if(sheetData[n][4] != ''){
+                                const coCountry = document.createElement("p")
+                                coCountry.textContent = ("Co-submitted by: " + sheetData[n][4])
+                                coCountry.classList.add("co-country")
+                                subtextAmendemntDiv.appendChild(coCountry)
+                        }
+
+
+                        if(sheetData[n][5] == "Yes"){
+                                const secondDegree = document.createElement("p")
+                                secondDegree.classList.add("co-country")
+                                secondDegree.textContent = ("Second-degree amendment")
+
+                                subtextAmendemntDiv.appendChild(secondDegree)
+                        }
 
 
                         titleContainer.appendChild(clause)
                         titleContainer.appendChild(country)
 
+                        
+
                         amendmentDiv.appendChild(titleContainer)
                         amendmentDiv.appendChild(amendmentDivider)
-                        amendmentDiv.appendChild(amendmentTextbox)
+                        amendmentDiv.appendChild(subtextAmendemntDiv)
 
                         amendmentContainer.appendChild(amendmentDiv)
 
+                        
 
                 }
         }
@@ -294,5 +336,3 @@
 </body>
 
 </html>
-
-
