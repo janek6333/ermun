@@ -693,6 +693,7 @@ button{
     transition: max-height 1s ease-out;
     border:#c9c9c9 1px solid;
     margin-bottom: 10px;
+    position: relative;
 }
 
 .amendment-div:hover{
@@ -726,18 +727,53 @@ button{
     margin-right: 10px;
     font-weight: 500;
     /* padding-top:4px; */
-    color: #ff0000;
     color:#284040;
 }
+
+
+
+
+
+
+
+.co-country{
+    font-style: italic;
+    font-size:0.75rem;
+    text-align: right;
+    float:right;
+    margin-right: 10px;
+    font-weight: 500;
+    /* padding-top:4px; */
+    color:#284040;
+    float: right;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    line-height: 13px;
+}
+
+
+.subtext-amendment-div{
+    width:300px;
+    display:inline-block;
+    margin:0px;
+    margin-bottom: 8px;
+}
+
+
 
 .title-container{
     padding-top: 10px;
     margin:0;
 }
 
+.title-container.other{
+    padding-top: 5px;
+    margin: 0;
+}
+
 .amendment{
     margin: 0px 10px;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
 }
 
 .amendment-divider{
@@ -1772,8 +1808,6 @@ button{
     margin: 20px 25px;
     color: #414141;
 }
-
-
 
 
 
