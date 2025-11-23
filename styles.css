@@ -728,6 +728,11 @@ button{
     font-weight: 500;
     /* padding-top:4px; */
     color:#284040;
+    max-width: 165px;
+    max-height: 40px;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 
@@ -827,7 +832,7 @@ button{
     }
     .amendment-container{
         height:300px ;
-        display: none;
+        /* display: none; */
     }
 
     .desktop-only{
