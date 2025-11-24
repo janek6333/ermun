@@ -251,17 +251,17 @@
 
 
 
-                        if (sheetData[n][2] == "Strike"){
+                        if (sheetData[n][3] == "Strike"){
                                 clause.classList.add("strike")
                                 clause.textContent = "STRIKE"
 
                         }
-                        if (sheetData[n][2] == "Add"){
+                        if (sheetData[n][3] == "Add"){
                                 clause.classList.add("add")
                                 clause.textContent = "ADD"
 
                         }
-                        if (sheetData[n][2] == "Replace"){
+                        if (sheetData[n][3] == "Replace"){
                                 clause.classList.add("replace")
                                 clause.textContent = "REPLACE"
 
@@ -273,15 +273,15 @@
                         
 
                         country.textContent = sheetData[n][1]
-                        amendmentTextbox.textContent = sheetData[n][3]
+                        amendmentTextbox.textContent = sheetData[n][4]
 
                         subtextAmendemntDiv.appendChild(amendmentTextbox)
 
 
                         
-                        if(sheetData[n][4] != ''){
+                        if(sheetData[n][2] != ''){
                                 const coCountry = document.createElement("p")
-                                coCountry.textContent = ("Co-submitted by: " + sheetData[n][4])
+                                coCountry.textContent = ("Co-submitted by: " + sheetData[n][2])
                                 coCountry.classList.add("co-country")
                                 subtextAmendemntDiv.appendChild(coCountry)
                         }
@@ -312,6 +312,7 @@
                 }
         }
         
+        
 
 
 
@@ -334,3 +335,4 @@
 </body>
 
 </html>
+
