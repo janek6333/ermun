@@ -210,6 +210,7 @@
                         "USSR":"ru",
                         "Peru":"pe",
                         "Libya":"ly",
+                        "Portugal":"pt",
                         
 
                 }
