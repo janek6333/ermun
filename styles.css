@@ -1093,8 +1093,8 @@ button{
     margin-bottom: 50px;
     justify-items: center;
     justify-content: center;
-    /* grid-auto-rows:465px; CHANGE */
-    grid-auto-rows:495px;
+    grid-auto-rows:465px; 
+    /* grid-auto-rows:495px; */
 }
 @media (min-width:320px){
     .committee-grid-copy{
@@ -1813,6 +1813,7 @@ button{
     margin: 20px 25px;
     color: #414141;
 }
+
 
 
 
