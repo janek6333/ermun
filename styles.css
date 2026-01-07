@@ -1719,6 +1719,7 @@ button{
 .photos-images{
     width: min(500px, calc(100vw - 50px));
     height: auto;
+    
 }
 
 @media (min-width:820px){
@@ -1731,6 +1732,7 @@ button{
     height: auto;
 }
 }
+
 
 
 
@@ -1813,6 +1815,7 @@ button{
     margin: 20px 25px;
     color: #414141;
 }
+
 
 
 
